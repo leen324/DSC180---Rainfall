@@ -48,3 +48,13 @@ Once done, a Jupyter Notebook can be launched through the following command:
 `python -m notebook`
 
 It is then, one can open `analysis.ipynb` and select **Run All Cells** to reproduce the entire analysis.
+
+## Appendix: AI and Human Contributions
+
+*Placeholder — to be completed by the team before submission.*
+
+- **Human contributions:** [Describe each team member's work and review of the results.]
+- **AI contributions:** [Describe AI assistance with code, debugging, analysis, and report writing, where applicable.]
+- **Validation:** [Describe how AI-assisted code and results were checked or tested.]
+
+Detailed prompts, uses of generated output, and verification notes will be documented in [AI_USE.md](AI_USE.md).
