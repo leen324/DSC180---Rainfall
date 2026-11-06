@@ -49,6 +49,46 @@ Once done, a Jupyter Notebook can be launched through the following command:
 
 It is then, one can open `analysis.ipynb` and select **Run All Cells** to reproduce the entire analysis.
 
+## NCEP/EMC Stage IV Rainfall Analysis
+
+### Data Access
+
+Use the [UCAR Stage IV catalog](https://data.ucar.edu/dataset/ncep-emc-4km-gridded-data-grib-stage-iv-data), which links to the [GDEX archive](https://gdex.ucar.edu/datasets/d507005/). In Data Access, open the ST4 GRIB/GRIB2 file listing, select the `stage4.2024` directory, and download **`stage4.202401.tar`** for January 2024. Follow any archive sign-in prompts if required.
+
+Store the downloaded archive at `stage_iv/data/stage4.202401.tar`. Keep its original filename and format; the conversion script reads the archive directly. Raw and generated data are excluded from Git, so each user must obtain or generate them locally.
+
+### Dependencies
+
+Use Python 3.12 with pandas, xarray, cfgrib, ecCodes, matplotlib, Jupyter Notebook, and ipykernel. From a terminal with conda installed:
+
+```bash
+conda create -n rainfall -c conda-forge python=3.12 pandas xarray cfgrib eccodes matplotlib notebook ipykernel
+conda activate rainfall
+python -m ipykernel install --user --name rainfall --display-name "Python (rainfall)"
+```
+
+### Reproduce the Notebook
+
+Run these commands from the repository root after downloading the archive:
+
+```bash
+conda activate rainfall
+python stage_iv/convert_stage_iv.py
+python -m notebook
+```
+
+The conversion script extracts 72 hourly GRIB files into `stage_iv/data/hourly/` and writes `stage_iv/data/san_diego_stage_iv_jan21_23_2024.csv`. It selects the January 21–23, 2024 Pacific-time rainfall intervals within latitude 32.4–33.6°N and longitude 117.7–116.0°W. The area is a rectangle, not an exact county or west-of-mountains boundary.
+
+Open `stage_iv/analysis.ipynb`, select the **Python (rainfall)** kernel, and restart the kernel and run all cells from top to bottom. In VS Code, open the repository folder, open the same notebook, select the `rainfall` environment, and use **Run All**. Conversion is only necessary if the CSV has not already been generated.
+
+The notebook locates the repository from its working directory and uses `stage_iv/data/san_diego_stage_iv_jan21_23_2024.csv`; it does not require Andrew's personal filesystem path. Launch Jupyter from the repository root or a folder inside it. If the data file is missing, rerun the conversion step and check the archive's location.
+
+Expected inspection outputs include 72 unique hour-ending timestamps, zero duplicate grid-cell hours, and approximately 24.74% missing rainfall. Missing values remain missing, rather than becoming zero. The filtered table contains five candidate hours and 30 qualifying cell-hour observations. The notebook saves plots to `stage_iv/figures/extreme_rainfall_screening.png` and `stage_iv/figures/extreme_rainfall_filtered_values.png`.
+
+### Screening and Interpretation
+
+One observation represents one approximately 4 km grid cell for the hour preceding its timestamp. Pacific times are derived from UTC, and rainfall in inches is calculated as `rainfall_mm / 25.4`. We use 1.2 inches in one hour as an initial screening threshold, based on the mentor's approximate 1.2–1.5 inch range for locations west of the mountains. Confirming extremes requires location-specific thresholds, verifying the intended geographic region, and comparison with nearby rain gauges. The hourly maximum can come from a different cell each hour; it does not track one fixed location or establish terrain-induced airflow blocking.
+
 ## Appendix: AI and Human Contributions
 
 ### Andrew Kim
