@@ -51,10 +51,19 @@ It is then, one can open `analysis.ipynb` and select **Run All Cells** to reprod
 
 ## Appendix: AI and Human Contributions
 
-*Placeholder — to be completed by the team before submission.*
+### Andrew Kim
+- **Human contribution:** Selected and interpreted Stage IV rainfall results, refined visualizations using mentor guidance, and prepared meeting slides.
+- **AI contribution:** Assisted with data conversion, notebook code, debugging, visualization design, and explanatory writing.
+- **Validation:** Inspected dataframe outputs, checked 72-hour coverage and duplicate rows, reviewed missing values and unit conversions, and compared filtered values with plots.
 
-- **Human contributions:** [Describe each team member's work and review of the results.]
-- **AI contributions:** [Describe AI assistance with code, debugging, analysis, and report writing, where applicable.]
-- **Validation:** [Describe how AI-assisted code and results were checked or tested.]
+### Calvin Truong
+- **Human contribution:** [To be added.]
+- **AI contribution:** [To be added, or state no AI use.]
+- **Validation:** [To be added.]
 
-Detailed prompts, uses of generated output, and verification notes will be documented in [AI_USE.md](AI_USE.md).
+### Faline Le
+- **Human contribution:** [To be added.]
+- **AI contribution:** [To be added, or state no AI use.]
+- **Validation:** [To be added.]
+
+See [AI_USE.md](AI_USE.md) for detailed prompts and verification notes.
