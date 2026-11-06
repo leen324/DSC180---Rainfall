@@ -92,7 +92,7 @@ One observation represents one approximately 4 km grid cell for the hour precedi
 ## Appendix: AI and Human Contributions
 
 ### Andrew Kim
-- **Human contribution:** Selected and interpreted Stage IV rainfall results, refined visualizations using mentor guidance, and prepared meeting slides.
+- **Human contribution:** Selected and interpreted Stage IV rainfall results, refined visualizations using mentor guidance.
 - **AI contribution:** Assisted with data conversion, notebook code, debugging, visualization design, and explanatory writing.
 - **Validation:** Inspected dataframe outputs, checked 72-hour coverage and duplicate rows, reviewed missing values and unit conversions, and compared filtered values with plots.
 
