@@ -48,3 +48,21 @@ Once done, a Jupyter Notebook can be launched through the following command:
 `python -m notebook`
 
 It is then, one can open `analysis.ipynb` and select **Run All Cells** to reproduce the entire analysis.
+
+
+## ERA-5 Analysis
+
+### Overview
+
+In this dataset, we visualize a reanalysis project from the European Center for Medium Range Weather Forecast (ECMWF), which takes in decades of historical data from surface to atmospheric levels. It is important to note that the ERA-5 dataset is on a 25 degree grid scale, or 25 km scale, so it smooths out events that are extreme and localized, and is better for visualizing long term events that happen on a bigger scale.
+
+### Data Access
+
+The data is derived from Copernicus Data Storage (CSD) but is originally collected from the ECMWF.
+
+Data source: [https://www.ncei.noaa.gov/products/land-based-station/integrated-surface-database](https://cds.climate.copernicus.eu/datasets/reanalysis-era5-single-levels?tab=download)
+
+Here, you can choose from different variables for the dataset. In our case, we included the variables: 10m u-component of wind, 10m v-component of wind, and Total precipitation. You must create an account with the CDS and get an API key to access the data.
+
+### Initial Analysis
+For our initial analysis, we graphed the daily wind speed and precipitation levels in San Diego county for 2024, and the hourly precipitation levels for the January 21-23, 2024 floods that happened in San Diego. Our findings support the limitations of this dataset.
