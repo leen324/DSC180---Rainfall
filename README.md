@@ -66,3 +66,10 @@ Here, you can choose from different variables for the dataset. In our case, we i
 
 ### Initial Analysis
 For our initial analysis, we graphed the daily wind speed and precipitation levels in San Diego county for 2024, and the hourly precipitation levels for the January 21-23, 2024 floods that happened in San Diego. Our findings support the limitations of this dataset.
+
+
+## NCEP/EMC Stage IV Precipitation Analysis
+
+### Overview and Screening Method
+
+Our initial Stage IV analysis examined hourly precipitation estimates on approximately 4-kilometer grid cells during January 21–23, 2024. We used 1.2 inches in one hour as an initial screening threshold to identify candidate heavy-rainfall hours. Confirming extreme events requires checking whether locations fall within the intended western San Diego region and comparing estimates with location-specific thresholds and nearby gauges. These candidate hours guide further investigation of conditions associated with extreme rainfall, with the goal of supporting flood preparedness.
