@@ -4,7 +4,7 @@
 
 ### Scope and record status
 
-This record covers Andrew Kim's Stage IV work in `stage_iv/analysis.ipynb`, in notebook order. It does not document Calvin's NOAA ISD notebook or Faline's ERA5 work; those contributors should add their own AI-use records, if applicable.
+This record covers Andrew Kim's Stage IV work in `stage_iv/analysis.ipynb`, in notebook order.
 
 ChatGPT/Codex assisted with Python code, debugging, data interpretation, visualization design, and presentation wording. Andrew supplied the project context and mentor guidance, asked questions about the outputs, ran code during development, and selected material for the meeting. AI assistance also supported this documentation and review of the checkpoint report. The team remains responsible for reviewing the code, scientific interpretation, sources, and submitted writing.
 
