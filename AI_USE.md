@@ -112,36 +112,6 @@ These checks show that rainfall is not null everywhere. Missing rainfall is reta
 
 The counts sum to 30, consistent with the print statement. These are 30 **cell-hour observations**, not necessarily 30 distinct locations or 30 separate storms. Coordinates are displayed instead of assigning unverified coastal/inland categories. Comparison with nearby gauges and location-specific thresholds remains future work.
 
-### Suggested additional checks — not claimed as completed
-
-Python uses `assert` statements to check expectations. The notebook already contains the 72-row assertion described above; the following are optional additional checks, not tests reported as having been run:
-
-```python
-# After loading df:
-assert df["hour_end_utc"].nunique() == 72
-assert not df.duplicated(["hour_end_utc", "latitude", "longitude"]).any()
-assert df["rainfall_mm"].notna().any()
-assert df["rainfall_mm"].dropna().ge(0).all()
-
-# After selecting wettest:
-assert wettest["hour_end_pacific"].is_unique
-assert wettest["hour_end_pacific"].is_monotonic_increasing
-
-# After constructing screening_table:
-assert screening_table["Cells >=1.2 in"].sum() == len(flagged_cells)
-assert len(screening_table) == flagged_cells["hour_end_pacific"].nunique()
-```
-
-Expected counts and peak values above describe this January 2024 data extract. They should not be treated as universal expectations for different datasets.
-
-### Related assistance and remaining team documentation
-
-Before the notebook analysis, AI assistance helped with downloading Stage IV data, handling the binary archive/GRIB format, producing the CSV conversion script, resolving environment and file-path problems, and explaining missing values. Related prompts included “okay the data looks weird, how do i change it to a csv?”, “what's going on in my terminal why isn't it working”, and “it says no module named matplotlib”. This section is a summary rather than a complete converter-development prompt log.
-
-AI also helped draft concise slide bullets and speaker notes and review the checkpoint report. Andrew requested “just give me the bullet points and the speaker notes and i'll copy screenshots of the plots”. Later requests covered removing unrelated template references/content, adding screening limitations, using measured flood-preparedness language, and adding README AI-use documentation. This file itself was drafted with AI assistance following Andrew's request to document prompts and tests in notebook order.
-
-**To complete before submission:** Andrew should review this reconstruction against his original chats and add omitted prompts. Calvin and Faline should document their own AI use, if any, including report-writing assistance. The team should record any additional tests actually executed and verify the final submitted report and code. No claim is made here that all team prompts have been captured or that all current cells have passed a fresh end-to-end execution.
-
 ## Calvin's logs
 
 *Placeholder — Calvin to add prompts, AI-assisted work, and how the resulting code or writing was checked. If no AI was used, state that here.*
