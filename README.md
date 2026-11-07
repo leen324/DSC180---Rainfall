@@ -89,6 +89,23 @@ Expected inspection outputs include 72 unique hour-ending timestamps, zero dupli
 
 One observation represents one approximately 4 km grid cell for the hour preceding its timestamp. Pacific times are derived from UTC, and rainfall in inches is calculated as `rainfall_mm / 25.4`. We use 1.2 inches in one hour as an initial screening threshold, based on the mentor's approximate 1.2–1.5 inch range for locations west of the mountains. Confirming extremes requires location-specific thresholds, verifying the intended geographic region, and comparison with nearby rain gauges. The hourly maximum can come from a different cell each hour; it does not track one fixed location or establish terrain-induced airflow blocking.
 
+## ERA-5 Analysis
+
+### Overview
+
+In this dataset, we visualize a reanalysis project from the European Center for Medium Range Weather Forecast (ECMWF), which takes in decades of historical data from surface to atmospheric levels. It is important to note that the ERA-5 dataset is on a 25 degree grid scale, or 25 km scale, so it smooths out events that are extreme and localized, and is better for visualizing long term events that happen on a bigger scale.
+
+### Data Access
+
+The data is derived from Copernicus Data Storage (CSD) but is originally collected from the ECMWF.
+
+Data source: [https://www.ncei.noaa.gov/products/land-based-station/integrated-surface-database](https://cds.climate.copernicus.eu/datasets/reanalysis-era5-single-levels?tab=download)
+
+Here, you can choose from different variables for the dataset. In our case, we included the variables: 10m u-component of wind, 10m v-component of wind, and Total precipitation. You must create an account with the CDS and get an API key to access the data.
+
+### Initial Analysis
+For our initial analysis, we graphed the daily wind speed and precipitation levels in San Diego county for 2024, and the hourly precipitation levels for the January 21-23, 2024 floods that happened in San Diego. The visualizations support the limitations of this dataset.
+
 ## Appendix: AI and Human Contributions
 
 ### Andrew Kim
@@ -102,8 +119,8 @@ One observation represents one approximately 4 km grid cell for the hour precedi
 - **Validation:** Evaluated interpretations and hypothesis and avoided claims that had yet been confirmed due to insufficient analysis, looked into visualizations to ensure trends matched with the real world events.
 
 ### Faline Le
-- **Human contribution:** [To be added.]
-- **AI contribution:** [To be added, or state no AI use.]
-- **Validation:** [To be added.]
+- **Human contribution:** Accessed dataset and initial code for building dataset and visualizations, chose visualization options (type, color, titles).
+- **AI contribution:** Defined variables specific to the dataset in relation to subject expert guidance and instructions. Helped initial access to dataset and resolved feedback errors in access.
+- **Validation:** Checked visualizations against knowledge of January 2024 storms to ensure accurate representation, alongside against Andrew and Calvin's visualizations of the storm to check for consistency. Developed and understanding of a 25 degree grid and the corresponding limitations of the dataset.
 
 See [AI_USE.md](AI_USE.md) for detailed prompts and verification notes.
