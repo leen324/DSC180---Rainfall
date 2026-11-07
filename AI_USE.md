@@ -113,8 +113,17 @@ These checks show that rainfall is not null everywhere. Missing rainfall is reta
 The counts sum to 30, consistent with the print statement. These are 30 **cell-hour observations**, not necessarily 30 distinct locations or 30 separate storms. Coordinates are displayed instead of assigning unverified coastal/inland categories. Comparison with nearby gauges and location-specific thresholds remains future work.
 
 ## Calvin's logs
+For now, I have listed the prompts that I had used to assist me in understanding and executing my analysis.
+1. How do I access the NOAA COOP HPD v2 dataset https://www.ncei.noaa.gov/products/land-based-station/integrated-surface-database, and can you help me understand the data that I need?
 
-*Placeholder — Calvin to add prompts, AI-assisted work, and how the resulting code or writing was checked. If no AI was used, state that here.*
+2. Can you find two weather stations that I can pull out of the dataset to be able to compare different areas in San Diego? Preferably, ones on either side of the mountain terrains (so like one more coastal/one more inland).
+
+3. What do the values in NOAA ISD's WND column represent? Also, how can I interpret the wind direction and speed measurements? I also heard about terms like southerly or westerly winds. Can you tell me what that means and how to interpret that?
+
+4. Where is sea level pressure adjusted to in terms of elevation, and why is this adjustment necessary when comparing the KSAN and KIPL weather stations?
+
+5. What can differences in atmospheric pressure between KSAN and KIPL tell us about wind patterns, and how can this be related to mountain blocking?
+
 
 ## Faline's logs
 

@@ -97,9 +97,9 @@ One observation represents one approximately 4 km grid cell for the hour precedi
 - **Validation:** Inspected dataframe outputs, checked 72-hour coverage and duplicate rows, reviewed missing values and unit conversions, and compared filtered values with plots.
 
 ### Calvin Truong
-- **Human contribution:** [To be added.]
-- **AI contribution:** [To be added, or state no AI use.]
-- **Validation:** [To be added.]
+- **Human contribution:** Accessed and explored NOAA ISD weather observations from KSAN and KIPL, developed Python analysis of meteorological variables and created visualizations during San Diego's extreme rainfall in January 21-23, 2024, interpreted potential relationships between said variables and mountain terrain.
+- **AI contribution:** Assisted with understanding dataset access and identifying two locations within San Diego that would be suitable for analysis, explained meterological variables and how to interpret them in this context, provided further explanation and guidance on how results are associated with mountain blocking.
+- **Validation:** Evaluated interpretations and hypothesis and avoided claims that had yet been confirmed due to insufficient analysis, looked into visualizations to ensure trends matched with the real world events.
 
 ### Faline Le
 - **Human contribution:** [To be added.]
