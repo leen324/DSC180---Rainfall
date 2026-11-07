@@ -127,4 +127,26 @@ For now, I have listed the prompts that I had used to assist me in understanding
 
 ## Faline's logs
 
-*Placeholder — Faline to add prompts, AI-assisted work, and how the resulting code or writing was checked. If no AI was used, state that here.*
+I mainly used Claude to help guide me through the setup of getting the dataset from the ERA-5 website: https://cds.climate.copernicus.eu/datasets/reanalysis-era5-single-levels?tab=overview. The following include the prompts I used:
+
+1. I want to pull a dataset for the San Diego region from the following website: https://cds.climate.copernicus.eu/datasets/reanalysis-era5-single-levels?tab=download. 
+What are the variable selections I should do to match the following goal: Always check the box for reanalysis! To download data covering San Diego County, put in the LON and LAT as a bounding box in the geographical area down the page by checking the circle for area selection. I will recommend choosing your download to return as NetCDF4 instead of Grib which can be read by a line of code. For this dataset, you'll look at hourly winds, temperature, humidity, and IVT on a 0.25°.
+
+2. What do I do with my API key? How do I get the initial dataset?
+
+3. I am getting an error in my notebook related to running shell commands with pip. How do I resolve this error: 
+-----------------------------
+OSError                                   Traceback (most recent call last)
+Cell In[3], line 2
+      1 import sys
+----> 2 get_ipython().system('{sys.executable} -m pip install "cdsapi>=0.7.2" xarray netcdf4 pandas numpy matplotlib')
+
+OSError: Not available
+
+
+4. I am getting the following error when trying to download the data:
+HTTPError: 403 Client Error: Forbidden for url: https://cds.climate.copernicus.eu/api/retrieve/v1/processes/reanalysis-era5-single-levels/execution
+cost limits exceeded
+Your request is too large, please reduce your selection.
+Would I be able to do only yearly for the past ten years instead of from 1940-2026? Or would that still be too much?
+
